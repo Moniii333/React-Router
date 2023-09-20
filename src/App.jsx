@@ -1,16 +1,27 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
+import Red from './components/Red'
+import Blue from './components/Blue'
+import Home from './components/Home'
+import Nav from './components/Nav'
+import Fact from './components/Fact'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <div id="container">
-    <div id="navbar">{/* navigation here */}</div>
+      <Nav />
     <div id="main-section">
       <Routes>
-        <Route path='/red' element={<h1>Red</h1>} />
-        <Route path='/blue' element={<h1>blue</h1>} />
+        <Route path='/' exact element={ <Home /> } />
+        <Route path='/red' element={ <Red /> } />
+        <Route path='/blue' element={ <Blue /> } />
+        <Route path='/fact' element={ <Fact /> } />
       </Routes>
+    </div>
+    <div className='footer'>
+      <Footer />
     </div>
   </div>
   )
